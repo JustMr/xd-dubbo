@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xingdong.web.dao.XdUserMapper" >
+  <resultMap id="BaseResultMap" type="com.xingdong.entity.XdUser" >
+    <id column="xid" property="xid" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="TINYINT" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="card_no" property="cardNo" jdbcType="VARCHAR" />
+    <result column="card_type" property="cardType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    xid, user_name, pwd, nick_name, age, sex, birthday, card_no, card_type
+  </sql>
+  <select id="selectByFilter" parameterType="xdUser" resultMap="BaseResultMap">
+      SELECT
+      <include refid="Base_Column_List" />
+      FROM xd_user
+      <where>
+          <if test="userName != null and userName != '' ">
+              user_name = #{userName}
+          </if>
+          <if test="pwd != null and pwd != '' ">
+              AND pwd = #{pwd}
+          </if>
+      </where>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xd_user
+    where xid = #{xid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xd_user
+    where xid = #{xid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xingdong.entity.XdUser" >
+    insert into xd_user (xid, user_name, pwd, 
+      nick_name, age, sex, 
+      birthday, card_no, card_type
+      )
+    values (#{xid,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{age,jdbcType=TINYINT}, #{sex,jdbcType=TINYINT}, 
+      #{birthday,jdbcType=DATE}, #{cardNo,jdbcType=VARCHAR}, #{cardType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xingdong.entity.XdUser" >
+    insert into xd_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xid != null" >
+        xid,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="cardNo != null" >
+        card_no,
+      </if>
+      <if test="cardType != null" >
+        card_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xid != null" >
+        #{xid,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=TINYINT},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="cardNo != null" >
+        #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null" >
+        #{cardType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xingdong.entity.XdUser" >
+    update xd_user
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=TINYINT},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="cardNo != null" >
+        card_no = #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null" >
+        card_type = #{cardType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where xid = #{xid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xingdong.entity.XdUser" >
+    update xd_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      age = #{age,jdbcType=TINYINT},
+      sex = #{sex,jdbcType=TINYINT},
+      birthday = #{birthday,jdbcType=DATE},
+      card_no = #{cardNo,jdbcType=VARCHAR},
+      card_type = #{cardType,jdbcType=VARCHAR}
+    where xid = #{xid,jdbcType=VARCHAR}
+  </update>
+</mapper>
