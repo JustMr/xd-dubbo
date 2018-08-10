@@ -29,7 +29,7 @@ public class UserManagerController {
     public String login(XdUser user, HttpServletRequest request) {
         if (StringUtils.isEmpty(user.getUserName())
                 || StringUtils.isEmpty(user.getPwd())) {
-            return "redirect:/login.jsp";
+            return "redirect:/login.html";
         }
 
         List<XdUser> users = xdUserMapper.selectByFilter(user);
@@ -38,7 +38,7 @@ public class UserManagerController {
             request.setAttribute("nickName", users.get(0).getNickName());
             return "success";
         }else {
-            return "redirect:/login.jsp";
+            return "redirect:/login.html";
         }
     }
 

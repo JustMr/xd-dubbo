@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
+    <script type="text/javascript">
+        function checkPromission() {
+            var name = document.getElementById("userName").value;
+            var pwd = document.getElementById("pwd").value;
+            if (name.trim()=="" || pwd.trim()=="") {
+                document.getElementById("msg").innerHTML = "<label style='color: red'>账号/密码不能为空</label>";
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
-    <form action="xingdong/login" method="post">
+    <form action="xingdong/login" method="post" onsubmit="return checkPromission();">
         <div>
             <label for="userName">用户名：</label>
             <input id="userName" name="userName" type="text" />
@@ -14,8 +24,9 @@
             <label for="pwd">密码：</label>
             <input id="pwd" name="pwd" type="password" />
         </div>
-        <div>
+        <div id="sub">
             <button type="submit">登录</button>
+            <div id="msg"></div>
         </div>
     </form>
 </body>
