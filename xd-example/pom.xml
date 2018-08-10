@@ -7,18 +7,13 @@
         <groupId>com.xingdong</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xd-frame</artifactId>
-    <name>xd-frame</name>
-
+    <artifactId>xd-example</artifactId>
+    <packaging>pom</packaging>
     <modules>
-        <module>xd-wb</module>
-        <module>xd-full-wb</module>
-        <module>xd-micro-server</module>
-        <module>xd-base-wb</module>
-        <module>xd-full-base-wb</module>
+        <module>xd-demo</module>
+        <module>xd-demo-provider</module>
     </modules>
 
 

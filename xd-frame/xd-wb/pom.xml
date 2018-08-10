@@ -10,11 +10,9 @@
     <packaging>war</packaging>
     <name>xd-wb</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <!-- Spring版本号 -->
-        <spring.version>4.3.8.RELEASE</spring.version>
-    </properties>
+    <description>
+        Spring + SpringMVC + MyBatis
+    </description>
 
     <dependencies>
         <!-- Spring相关包 -->

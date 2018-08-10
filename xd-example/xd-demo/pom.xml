@@ -9,22 +9,28 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xd-platform</artifactId>
+    <artifactId>xd-demo</artifactId>
     <packaging>war</packaging>
 
-    <name>xd-platform</name>
+    <name>xd-demo</name>
     <url>http://www.example.com</url>
+    <description>消费者</description>
 
     <dependencies>
         <dependency>
             <groupId>com.xingdong</groupId>
             <artifactId>xd-full-wb</artifactId>
             <version>1.0-SNAPSHOT</version>
+
+        </dependency>
+        <dependency>
+            <groupId>com.xingdong</groupId>
+            <artifactId>xd-micro-server</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>xd-platform</finalName>
         <plugins>
             <!--自动部署到远程tomcat-->
             <!--<plugin>
@@ -51,19 +57,30 @@
                      <maxmem>1048m</maxmem>-->
                 </configuration>
             </plugin>
+
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+
 </project>

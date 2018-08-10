@@ -9,39 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xd-full-wb</artifactId>
+    <artifactId>xd-base-wb</artifactId>
+    <packaging>war</packaging>
 
-    <name>xd-full-wb</name>
+    <name>xd-base-wb</name>
     <url>http://www.example.com</url>
     <description>
-        Spring + SpringMVC + MyBatis
+        仅有Spring配置,无数据库配置
     </description>
 
+
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- 实体 -->
-        <dependency>
-            <groupId>com.xingdong</groupId>
-            <artifactId>xd-entity</artifactId>
-        </dependency>
-        <!-- 接口 -->
-        <dependency>
-            <groupId>com.xingdong</groupId>
-            <artifactId>xd-interface</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.xingdong</groupId>
-            <artifactId>xd-wb</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>war</type>
-        </dependency>
-
         <!-- Spring相关包 -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -73,16 +51,6 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>${commonsLogging.version}</version>
-        </dependency>
 
         <!-- AOP相关包 -->
         <dependency>
@@ -94,32 +62,6 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.0</version>
-        </dependency>
-
-        <!-- MyBatis相关包 -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.3.0</version>
-        </dependency>
-        <!-- MySQL相关包 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.26</version>
-        </dependency>
-        <!-- 数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.20</version>
-        </dependency>
-
-        <!-- Spring集成MyBatis -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>1.2.3</version>
         </dependency>
 
         <!-- JSP标准标签库 -->
@@ -151,5 +93,36 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>xd-base-wb</finalName>
+        <plugins>
+            <!--自动部署到远程tomcat-->
+            <!--<plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <port></port>
+                    <path></path>
+                    <url></url>
+                    <username></username>
+                    <password></password>
+                </configuration>
+            </plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                    <!-- <fork>true</fork>
+                     <meminitial>512m</meminitial>
+                     <maxmem>1048m</maxmem>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
