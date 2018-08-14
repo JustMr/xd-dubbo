@@ -19,14 +19,12 @@ public class SenderDubbo {
 
     @Resource
     private SenderService senderService;
-    @Reference
-    private IProviderDubbo providerDubbo;
+
 
     @RequestMapping("/sender")
     @ResponseBody
     public String senderDubbo() {
-        System.out.println(senderService.getMsg());
-        return providerDubbo.queryMsg();
+        return senderService.getMsg();
     }
 
 }

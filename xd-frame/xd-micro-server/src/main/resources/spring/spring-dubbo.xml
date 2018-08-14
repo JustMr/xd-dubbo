@@ -21,7 +21,7 @@
     <!--<bean id="demoService" class="com.xingdong.dubbo.service.impl.DemoServerImpl" />-->
 
     <!-- 注解方式扫描组件注册服务 -->
-    <dubbo:annotation package="com.xingdong.dubbo" />
+    <dubbo:annotation package="com.xingdong" />
 
     <!-- 消费者超时设置 -->
     <!--<dubbo:consumer timeout="5000"/>-->
