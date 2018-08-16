@@ -9,12 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>xd-entity</module>
         <module>xd-platform</module>
         <module>xd-frame</module>
         <module>xd-interface</module>
         <module>xd-example</module>
-        <module>xd-mapper</module>
+        <module>xd-common</module>
     </modules>
 
     <properties>
