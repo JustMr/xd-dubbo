@@ -26,7 +26,7 @@ public class DubboConsumer {
      */
     private static void SayHello() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[] { "spring/spring-dubbo.xml" });
+                new String[] {"spring/dubbo-config.xml"});
         context.start();
         System.err.println(providerDubbo.queryMsg());
     }
