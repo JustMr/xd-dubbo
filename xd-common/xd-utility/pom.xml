@@ -9,9 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xd-untility</artifactId>
+    <artifactId>xd-utility</artifactId>
 
-    <name>xd-untility</name>
+    <name>xd-utility</name>
     <url>http://www.example.com</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

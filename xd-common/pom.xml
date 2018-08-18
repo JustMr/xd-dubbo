@@ -17,7 +17,9 @@
     <modules>
         <module>xd-entity</module>
         <module>xd-mapper</module>
-        <module>xd-untility</module>
+        <module>xd-utility</module>
+        <module>xd-ori-redis</module>
+        <module>xd-spring-redis</module>
     </modules>
 
 </project>
