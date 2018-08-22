@@ -32,6 +32,12 @@
             <artifactId>xd-spring-redis</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.xingdong</groupId>
+            <artifactId>xd-sender-mq</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

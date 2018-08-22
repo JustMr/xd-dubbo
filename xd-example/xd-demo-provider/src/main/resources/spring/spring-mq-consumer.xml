@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 队列目的地 topic -->
+    <!--<bean id="bizQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="biz-queue"/>
+    </bean>-->
+
+    <!-- 消息监听实现方法一 -->
+    <bean id="bizListener" class="com.xingdong.mq.consumer.BizMessageListener"/>
+
+    <!-- 消息接收监听器用于异步接收消息-->
+    <bean id="bizContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destination" ref="bizQueue"/>
+        <property name="messageListener" ref="bizListener"/>
+        <!--这里注意:如果不开启事务，消息在异常的情况下是不会重试的-->
+        <property name="sessionTransacted" value="true"/>
+        <property name="concurrentConsumers" value="1"/>
+    </bean>
+
+</beans>
