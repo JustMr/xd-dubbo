@@ -6,9 +6,9 @@
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 队列目的地 topic -->
-    <!--<bean id="bizQueue" class="org.apache.activemq.command.ActiveMQQueue">
+    <bean id="bizQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="biz-queue"/>
-    </bean>-->
+    </bean>
 
     <!-- 消息监听实现方法一 -->
     <bean id="bizListener" class="com.xingdong.mq.consumer.BizMessageListener"/>

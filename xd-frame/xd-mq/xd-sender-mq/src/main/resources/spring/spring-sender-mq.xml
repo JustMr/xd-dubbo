@@ -5,17 +5,12 @@
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 队列目的地 topic-->
-    <bean id="bizQueue" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg value="biz-queue"/>
-    </bean>
-
     <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
     <!-- 队列模板 这里配置2个，一个用于分布式业务，一个用于发送邮件-->
-    <bean id="jmsTemplateQuene" class="org.springframework.jms.core.JmsTemplate">
+    <bean id="jmsTemplateQueue" class="org.springframework.jms.core.JmsTemplate">
         <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
         <property name="connectionFactory" ref="connectionFactory"/>
-        <property name="defaultDestination" ref="bizQueue"/>
+        <!--<property name="defaultDestination" ref="bizQueue"/>-->
         <!-- 使 deliveryMode, priority, timeToLive设置生效-->
         <property name="explicitQosEnabled" value="true" />
         <!-- 持久化 如果设置为非持久化MQ服务器重启后MQ中的数据会丢失-->
@@ -29,7 +24,7 @@
     <bean id="jmsTemplateTopic" class="org.springframework.jms.core.JmsTemplate">
         <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
         <property name="connectionFactory" ref="connectionFactory"/>
-        <property name="defaultDestination" ref="bizQueue"/>
+        <!--<property name="defaultDestination" ref="bizQueue"/>-->
         <!-- 使 deliveryMode, priority, timeToLive设置生效-->
         <property name="explicitQosEnabled" value="true" />
         <!-- 持久化 如果设置为非持久化MQ服务器重启后MQ中的数据会丢失-->

@@ -11,26 +11,36 @@
         <property name="brokerURL" value="${mq.brokerURL}"/>
         <property name="userName" value="${mq.userName}"/>
         <property name="password" value="${mq.password}"/>
+        <!--将该值开启官方说法是可以取得更高的发送速度（5倍）。-->
+        <property name="useAsyncSend" value="true" />
         <!-- 这里定义重试策略,注意：只有持久化的才会重试-->
-        <property name="redeliveryPolicyMap" ref="redeliveryPolicyMap"/>
+        <!--<property name="redeliveryPolicyMap" ref="redeliveryPolicyMap"/>-->
+        <!-- 引用重发机制 -->
+        <property name="redeliveryPolicy" ref="bizRedeliveryPolicy" />
     </bean>
 
     <!--
     -->
-    <bean id="redeliveryPolicyMap" class="org.apache.activemq.broker.region.policy.RedeliveryPolicyMap">
+    <!--<bean id="redeliveryPolicyMap" class="org.apache.activemq.broker.region.policy.RedeliveryPolicyMap">
         <property name="redeliveryPolicyEntries">
             <list>
                 <ref bean="bizRedeliveryPolicy"/>
             </list>
         </property>
-    </bean>
+    </bean>-->
     <bean id="bizRedeliveryPolicy" class="org.apache.activemq.RedeliveryPolicy">
         <!--重发次数 延时、延时系数、延时指数开关、目标（重发等待时间1s, 2s, 4s, 8s）-->
+        <!--重发次数,默认为6次 -->
         <property name="maximumRedeliveries" value="3"/>
         <property name="redeliveryDelay" value="1000"/>
+        <!--第一次失败后重新发送之前等待500毫秒,第二次失败再等待500 * 2毫秒,这里的2就是value -->
         <property name="backOffMultiplier" value="2"/>
+        <!--最大传送延迟，只在useExponentialBackOff为true时有效（V5.5），假设首次重连间隔为10ms，倍数为2，那么第
+            二次重连时间间隔为 20ms，第三次重连时间间隔为40ms，当重连时间间隔大的最大重连时间间隔时，以后每次重连时间间隔都为最大重连时间间隔。 -->
+        <property name="maximumRedeliveryDelay" value="1000"/>
+        <!--是否在每次尝试重新发送失败后,增长这个等待时间 -->
         <property name="useExponentialBackOff" value="true"/>
-        <property name="destination" ref="bizQueue"/>
+        <!--<property name="destination" ref="bizQueue"/>-->
     </bean>
 
     <!--

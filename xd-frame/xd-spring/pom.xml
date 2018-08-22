@@ -11,6 +11,8 @@
 
     <artifactId>xd-spring</artifactId>
 
+    <name>xd-spring</name>
+
     <dependencies>
         <!-- Spring相关包 -->
         <dependency>
@@ -36,6 +38,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
         </dependency>
 
         <!-- AOP相关包 -->
