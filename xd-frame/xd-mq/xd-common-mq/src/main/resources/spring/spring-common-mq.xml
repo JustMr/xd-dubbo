@@ -32,7 +32,7 @@
         <!--重发次数 延时、延时系数、延时指数开关、目标（重发等待时间1s, 2s, 4s, 8s）-->
         <!--重发次数,默认为6次 -->
         <property name="maximumRedeliveries" value="3"/>
-        <property name="redeliveryDelay" value="1000"/>
+        <property name="initialRedeliveryDelay" value="1000"/>
         <!--第一次失败后重新发送之前等待500毫秒,第二次失败再等待500 * 2毫秒,这里的2就是value -->
         <property name="backOffMultiplier" value="2"/>
         <!--最大传送延迟，只在useExponentialBackOff为true时有效（V5.5），假设首次重连间隔为10ms，倍数为2，那么第
