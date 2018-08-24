@@ -1,4 +1,4 @@
-package com.xingdong.ws.util;
+package com.xingdong.util.ws;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;

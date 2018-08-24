@@ -2,7 +2,7 @@ package com.xingdong.provider.test;
 
 import com.xingdong.common.util.SpringContextUtil;
 import com.xingdong.provider.service.ProviderService;
-import com.xingdong.ws.util.CxfUtil;
+import com.xingdong.util.ws.CxfUtil;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
