@@ -26,6 +26,10 @@
         <commonsLogging.version>1.2</commonsLogging.version>
         <!-- Active版本号 -->
         <activemq.version>5.9.0</activemq.version>
+        <!-- fastjson 版本号 -->
+        <fastjson.version>1.2.47</fastjson.version>
+        <!-- Webservice cxf -->
+        <cxf.version>3.1.4</cxf.version>
     </properties>
 
     <profiles>
@@ -39,6 +43,9 @@
         </profile>
         <profile>
             <id>DAT</id>
+        </profile>
+        <profile>
+            <id>UAT</id>
         </profile>
     </profiles>
 
@@ -82,6 +89,19 @@
                 <groupId>com.xingdong</groupId>
                 <artifactId>xd-mapper</artifactId>
                 <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>com.xingdong</groupId>
+                <artifactId>xd-utility</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <!--<exclusions>
+                    <exclusion>
+                        <groupId>com.xingdong</groupId>
+                        <artifactId>xd-ws</artifactId>
+                    </exclusion>
+                </exclusions>-->
             </dependency>
 
             <!-- Redis客户端 -->
@@ -204,7 +224,7 @@
                 <version>3.1.0</version>
             </dependency>
 
-            <!-- dubbo start -->
+            <!-- dubbo config start -->
             <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -265,7 +285,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!-- dubbo end -->
+            <!-- dubbo config end -->
 
             <!--active mq start-->
             <dependency>
@@ -308,6 +328,32 @@
                 </exclusions>
             </dependency>
             <!--active mq end-->
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- webService cxf start -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>${cxf.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- webService cxf end -->
 
         </dependencies>
     </dependencyManagement>

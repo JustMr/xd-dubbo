@@ -21,6 +21,7 @@
         <module>xd-full-base-wb</module>
         <module>xd-mq</module>
         <module>xd-spring</module>
+        <module>xd-ws</module>
     </modules>
 
 
