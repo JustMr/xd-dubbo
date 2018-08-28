@@ -4,7 +4,7 @@ import com.xingdong.mq.util.MqSendUtil;
 import org.springframework.stereotype.Service;
 
 /**
- * mq provider
+ * mq provider 发送者
  * Created by liushuangbo on 2018/8/21.
  */
 @Service

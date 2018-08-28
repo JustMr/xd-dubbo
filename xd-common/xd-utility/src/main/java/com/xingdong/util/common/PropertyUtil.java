@@ -11,7 +11,7 @@ import java.util.Properties;
 public class PropertyUtil {
 
     //加载property文件到io流里面
-    public static Properties loadProperties(String propertyFile) {
+    private static Properties loadProperties(String propertyFile) {
         Properties properties = new Properties();
         try {
             InputStream is = PropertyUtil.class.getClassLoader().getResourceAsStream(propertyFile);

@@ -8,7 +8,7 @@ import javax.jws.WebService;
 import java.util.List;
 
 /**
- *
+ * Webservice 服务
  * Created by liushuangbo on 2018/8/23.
  */
 // targetNamespace 实现类和接口不在同包下，需要指定接口类所在包（路径）定义的命名空间

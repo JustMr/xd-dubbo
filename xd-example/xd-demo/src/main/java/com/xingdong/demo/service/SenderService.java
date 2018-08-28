@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
+ * Dubbo 接口调用
  * Created by liushuangbo on 2018/8/10.
  */
 @Service

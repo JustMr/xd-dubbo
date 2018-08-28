@@ -8,7 +8,7 @@ import javax.jws.WebService;
 import java.util.List;
 
 /**
- *
+ * Webservice 接口
  * Created by liushuangbo on 2018/8/23.
  */
 @WebService

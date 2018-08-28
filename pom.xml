@@ -30,6 +30,8 @@
         <fastjson.version>1.2.47</fastjson.version>
         <!-- Webservice cxf -->
         <cxf.version>3.1.4</cxf.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <httpmime.version>4.5.3</httpmime.version>
     </properties>
 
     <profiles>
@@ -96,12 +98,6 @@
                 <groupId>com.xingdong</groupId>
                 <artifactId>xd-utility</artifactId>
                 <version>1.0-SNAPSHOT</version>
-                <!--<exclusions>
-                    <exclusion>
-                        <groupId>com.xingdong</groupId>
-                        <artifactId>xd-ws</artifactId>
-                    </exclusion>
-                </exclusions>-->
             </dependency>
 
             <!-- Redis客户端 -->
@@ -225,7 +221,6 @@
             </dependency>
 
             <!-- dubbo config start -->
-            <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
@@ -245,7 +240,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
@@ -265,7 +259,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
             <dependency>
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
@@ -329,7 +322,7 @@
             </dependency>
             <!--active mq end-->
 
-            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <!-- fastjson -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -355,6 +348,24 @@
             </dependency>
             <!-- webService cxf end -->
 
+            <!-- httpClient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpmime.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>3.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
