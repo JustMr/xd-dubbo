@@ -1,4 +1,4 @@
-package com.xingdong.dubbo.test;
+package com.xingdong.test;
 
 /**
  * 不推荐dubbo间使用实体

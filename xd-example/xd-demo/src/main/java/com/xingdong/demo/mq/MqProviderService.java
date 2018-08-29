@@ -1,6 +1,6 @@
-package com.xingdong.mq.provider;
+package com.xingdong.demo.mq;
 
-import com.xingdong.mq.util.MqSendUtil;
+import com.xingdong.util.MqSendUtil;
 import org.springframework.stereotype.Service;
 
 /**

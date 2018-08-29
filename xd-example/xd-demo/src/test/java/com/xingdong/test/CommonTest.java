@@ -1,7 +1,7 @@
-package com.xingdong.dubbo.test;
+package com.xingdong.test;
 
 import com.xingdong.common.util.SpringContextUtil;
-import com.xingdong.mq.provider.MqProviderService;
+import com.xingdong.demo.mq.MqProviderService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

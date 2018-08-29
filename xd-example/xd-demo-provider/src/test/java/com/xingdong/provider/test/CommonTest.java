@@ -2,7 +2,6 @@ package com.xingdong.provider.test;
 
 import com.xingdong.common.util.SpringContextUtil;
 import com.xingdong.provider.service.ProviderService;
-import com.xingdong.util.ws.CxfUtil;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
@@ -21,16 +20,6 @@ public class CommonTest {
                 "classpath*:spring/*.xml");
         ProviderService service = SpringContextUtil.getBean(ProviderService.class);
         service.getMsg();
-    }
-
-    @Test
-    public void testCxf() {
-        try {
-            System.out.println(CxfUtil.sendCxfMessageRetOne("http://localhost:8081/dubbo/cxf/remoteService?wsdl",
-                    "showMessage", "还好有你"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Test

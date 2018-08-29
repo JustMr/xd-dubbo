@@ -1,10 +1,11 @@
-package com.xingdong.dubbo.test;
+package com.xingdong.test;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
+ *
  * Created by liushuangbo on 2018/8/9.
  */
 @Component

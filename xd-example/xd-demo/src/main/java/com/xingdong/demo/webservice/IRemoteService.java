@@ -1,4 +1,4 @@
-package com.xingdong.remote;
+package com.xingdong.demo.webservice;
 
 import com.xingdong.entity.XdUser;
 

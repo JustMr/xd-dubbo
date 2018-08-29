@@ -1,7 +1,7 @@
 package com.xingdong.demo.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.xingdong.dubbo.test.IProviderDubbo;
+import com.xingdong.test.IProviderDubbo;
 import com.xingdong.entity.XdUser;
 import com.xingdong.util.redis.BaseRedisUtil;
 import com.xingdong.web.dao.XdUserMapper;

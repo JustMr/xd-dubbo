@@ -1,4 +1,4 @@
-package com.xingdong.mq.util;
+package com.xingdong.util;
 
 import com.xingdong.common.util.SpringContextUtil;
 import org.springframework.jms.core.JmsTemplate;

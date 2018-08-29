@@ -1,7 +1,7 @@
-package com.xingdong.dubbo.provider;
+package com.xingdong.provider.dubbo;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.xingdong.dubbo.test.IProviderDubbo;
+import com.xingdong.test.IProviderDubbo;
 import com.xingdong.provider.service.ProviderService;
 
 import javax.annotation.Resource;

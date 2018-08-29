@@ -1,4 +1,4 @@
-package com.xingdong.mq.consumer;
+package com.xingdong.provider.mq;
 
 import javax.jms.Message;
 import javax.jms.MessageListener;
