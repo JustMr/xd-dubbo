@@ -16,7 +16,9 @@
         <property name="properties" ref="configProperties" />
     </bean>
 
-    <context:annotation-config/>
+    <context:component-scan base-package="com.xingdong">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
 
     <bean id="springContextUtil" class="com.xingdong.common.util.SpringContextUtil"  lazy-init="false" />
 
