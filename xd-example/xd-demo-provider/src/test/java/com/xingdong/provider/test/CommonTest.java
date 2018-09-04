@@ -1,19 +1,17 @@
 package com.xingdong.provider.test;
 
-import com.xingdong.common.test.XdTest;
+import com.xingdong.common.test.XdBaseTest;
 import com.xingdong.common.util.SpringContextUtil;
 import com.xingdong.provider.service.ProviderService;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * Created by liushuangbo on 2018/8/22.
  */
-public class CommonTest extends XdTest {
+public class CommonTest extends XdBaseTest {
 
     @Test
     public void testBean() {
