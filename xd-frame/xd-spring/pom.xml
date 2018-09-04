@@ -14,6 +14,18 @@
     <name>xd-spring</name>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- spring test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Spring相关包 -->
         <dependency>
             <groupId>org.springframework</groupId>

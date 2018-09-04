@@ -1,21 +1,18 @@
 package com.xingdong.test;
 
+import com.xingdong.common.test.XdTest;
 import com.xingdong.common.util.SpringContextUtil;
 import com.xingdong.demo.mq.MqProviderService;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * Created by liushuangbo on 2018/8/22.
  */
-public class CommonTest {
+public class CommonTest extends XdTest {
 
     @Test
     public void testBean() {
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                "classpath*:spring/*.xml");
         MqProviderService service = SpringContextUtil.getBean(MqProviderService.class);
         service.sendMessage("zhongyukyida konggele");
     }
