@@ -1,5 +1,7 @@
 # xd-dubbo
-### dubbo+SpringMVC+Redis+ActiveMQ+WebService(CXF) ### 
+### dubbo+SpringMVC+Redis+ActiveMQ+WebService(CXF) ###  
+## 项目组织结构描述 ##  
+
 - xd-common 公共组件模块 
 - - xd-entity 实体存放公共模块  
 - - xd-mapper mapper文件   
